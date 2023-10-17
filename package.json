@@ -15,6 +15,8 @@
   "devDependencies": {
     "@nestjs/testing": "^10.2.7",
     "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "^3.3.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/jest": "^29.5.5",
     "@types/node": "^20.8.4",
     "eslint": "^8.51.0",
@@ -56,5 +58,8 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@phosphor-icons/vue": "^2.1.6"
   }
 }
