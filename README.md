@@ -1,6 +1,5 @@
 # Alterworld Hub
 
-
 ## Setup
 
 Make sure to install the dependencies:
