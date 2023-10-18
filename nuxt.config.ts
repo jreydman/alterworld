@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import {preprocessCSS} from "vite";
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
@@ -15,4 +17,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     exposeConfig: true,
   },
+  css: [
+    'normalize.css/normalize.css',
+  ]
 });
