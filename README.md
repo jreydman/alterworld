@@ -65,3 +65,6 @@ We have conducted tests on worker threads. Here are the results:
 
 - Native fib endpoint per 50 requests: 1.5s
 - Worker fib endpoint per 50 requests: 16.3s
+
+<img width="1590" alt="image" src="https://github.com/jreydman/alterworld/assets/58705342/6ed878c0-a4dc-468a-af61-3160c98692ef">
+
