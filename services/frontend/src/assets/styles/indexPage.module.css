@@ -1,0 +1,64 @@
+.page__section {
+	@apply w-full;
+}
+
+.page__header {
+	@apply h-[5vh];
+}
+
+.page__main {
+	@apply perspective-1000 overflow-hidden
+	@apply h-[90vh];
+}
+
+.page__footer {
+	@apply h-[5vh] flex justify-center items-center;
+}
+
+.page__dashboard {
+	@apply h-[100vh] flex flex-col items-center justify-center py-24 md:px-24;
+}
+
+.main__layersContainer {
+	@apply h-full transform-style-3d will-change-transform transition-transform;
+}
+
+.main__layer {
+	@apply absolute rotate-x-[var(--movePos-x)] rotate-y-[var(--movePos-y)];
+}
+
+.layer__wallpaper {
+	@apply -inset-36 bg-cover bg-center bg-city-wallpaper translate-z-0 scale-110;
+}
+
+.layer__rain {
+	@apply translate-z-20 scale-100;
+}
+
+.layer__logotype {
+	@apply inset-0 bg-cover bg-center rotate-y-2 flex items-center justify-center translate-z-20 scale-100;
+}
+
+.layer__console {
+	@apply inset-0 flex flex-col items-center justify-center translate-z-10 scale-95 gap-y-20;
+}
+
+.layer__submitBar {
+	@apply bottom-52 w-full bg-center rotate-y-2 flex items-center justify-center gap-4 translate-z-[15rem];
+}
+
+.console {
+	@apply flex items-start justify-between max-w-md w-full gap-4 mt-64;
+}
+
+.console > span {
+	@apply hidden sm:block;
+}
+
+.console > ul {
+	@apply max-w-96 marker:text-constructive list-disc list-inside bg-card/50 backdrop-blur-sm rounded-b-md w-full mt-0.5 px-2 divide-y-2;
+}
+
+.console__progressBar {
+	@apply max-w-md;
+}

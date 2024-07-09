@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/services/frontend/src/components/navigationBar.component.tsx"],"sourcesContent":["'use client'\n\nimport { cn } from 'src/lib/utils'\n\nconst NavigationBar: React.FC<Readonly<{}>> = () => (\n\t<nav className=\"md:w-2/5 mx-auto flex md:mt-4 flex-row items-center justify-between bg-card/75 py-4 px-10 md:rounded-full\">\n\t\t<p className={cn(``)}>Dashboard</p>\n\t\t<p className={cn(``)}>Profile</p>\n\t\t<p className={cn(``)}>Aboud</p>\n\t</nav>\n)\n\nexport default NavigationBar\n"],"names":[],"mappings":";;;;;;AAAA;;;AAIA,MAAM,gBAAwC,kBAC7C,+XAAC;QAAI,WAAU;;0BACd,+XAAC;gBAAE,WAAW,CAAA,GAAA,2IAAA,CAAA,KAAE,AAAD,EAAE,CAAC,CAAC;0BAAG;;;;;;0BACtB,+XAAC;gBAAE,WAAW,CAAA,GAAA,2IAAA,CAAA,KAAE,AAAD,EAAE,CAAC,CAAC;0BAAG;;;;;;0BACtB,+XAAC;gBAAE,WAAW,CAAA,GAAA,2IAAA,CAAA,KAAE,AAAD,EAAE,CAAC,CAAC;0BAAG;;;;;;;;;;;;uCAIT"}},
+    {"offset": {"line": 48, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 56, "column": 0}, "map": {"version":3,"sources":["/turbopack/[project]/node_modules/.pnpm/next@14.2.3_@babel+core@7.24.7_react-dom@18.3.1_react@18.3.1/node_modules/next/src/server/future/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["unable to read source [project]/node_modules/.pnpm/next@14.2.3_@babel+core@7.24.7_react-dom@18.3.1_react@18.3.1/node_modules/next/src/server/future/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,yNAAiCC,QAAQ,CACxD,YACD,CAACC,kBAAkB"}},
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

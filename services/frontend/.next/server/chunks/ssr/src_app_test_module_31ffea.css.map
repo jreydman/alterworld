@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["[project]/services/frontend/src/app/test.module.css"],"sourcesContent":[".testClass {\n\t--test: 'test';\n\theight: 100%;\n\ttransition-property: perspective, translate, scale, transform, perspective, rotate;\n\ttransition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n\ttransition-duration: 150ms;\n\twill-change: transform;\n\ttransform-style: preserve-3d;\n}\n"],"names":[],"mappings":"AAAA"}},
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

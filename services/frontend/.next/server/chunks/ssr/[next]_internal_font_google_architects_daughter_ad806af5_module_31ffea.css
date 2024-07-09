@@ -1,0 +1,30 @@
+/* [next]/internal/font/google/architects_daughter_ad806af5.module.css [app-ssr] (css) */
+@font-face {
+  font-family: __Architects_Daughter_ad806a;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/_next/static/media/KtkxAKiDZI_td1Lkx62xHZHDtgO_Y_bvTYlg4_7jA_U-s.b6ab126f.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: __Architects_Daughter_Fallback_ad806a;
+  src: local(Arial);
+  ascent-override: 93.03%;
+  descent-override: 38.04%;
+  line-gap-override: 0.0%;
+  size-adjust: 106.02%;
+}
+
+.architects_daughter_ad806af5-module__kQL7Fa__className {
+  font-family: __Architects_Daughter_ad806a, __Architects_Daughter_Fallback_ad806a;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.architects_daughter_ad806af5-module__kQL7Fa__variable {
+  --font-sans: "__Architects_Daughter_ad806a", "__Architects_Daughter_Fallback_ad806a";
+}
+
+/*# sourceMappingURL=%5Bnext%5D_internal_font_google_architects_daughter_ad806af5_module_31ffea.css.map*/

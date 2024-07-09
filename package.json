@@ -1,0 +1,9 @@
+{
+  "name": "test_deploy_next_ssl",
+  "version": "1.0.0",
+  "devDependencies": {
+    "turbo": "latest"
+  },
+  "scripts": {},
+  "packageManager": "pnpm@8.9.0"
+}

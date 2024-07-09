@@ -1,0 +1,32 @@
+# vim: ft=nginx
+
+upstream ${FRONTEND_HOST_SERVICE} {
+    server ${FRONTEND_HOST_SERVICE}:${FRONTEND_PORT};
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name ${FRONTEND_DOMAIN};
+    rewrite ^/(.*)$ https://$host$request_uri? permanent; 
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name ${FRONTEND_DOMAIN};
+
+    ssl_certificate /etc/nginx/certs/${PROJECT_NAME}.cert;
+    ssl_certificate_key /etc/nginx/certs/${PROJECT_NAME}.key;
+    ssl_trusted_certificate /etc/nginx/certs/${PROJECT_NAME}.ca;
+
+    location / {
+        proxy_pass  http://${FRONTEND_HOST_SERVICE};
+        proxy_intercept_errors on;
+        error_page 404 = @fallback;
+    }
+
+    location @fallback {
+        return 200 'The requested resource ${FRONTEND_HOST_SERVICE} is not available.';
+    }
+}

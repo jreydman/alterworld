@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider = "zod-prisma-types"
+  output   = "../dist/types/zod"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("__LOCAL_DATABASE_URL")
+}
+
+model User {
+  id               String         @id @default(cuid())
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  email            String         @unique
+  password         String?
+  role             Role           @default(USER)
+  signProviders    SignProvider[]
+  signStatus       SignStatus     @default(PENDING)
+  verifyEmailToken String?
+  refreshJwtToken  String?
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum SignStatus {
+  PENDING
+  ACTIVE
+  INACTIVE
+}
+
+enum SignProvider {
+  EMAIL
+  GOOGLE
+  GITHUB
+  FACEBOOK
+}

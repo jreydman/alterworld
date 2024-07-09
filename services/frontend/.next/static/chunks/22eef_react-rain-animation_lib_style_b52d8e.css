@@ -1,0 +1,31 @@
+/* [project]/node_modules/.pnpm/react-rain-animation@1.0.4/node_modules/react-rain-animation/lib/style.css [app-client] (css) */
+.drop {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#0d343a), to(#ffffff80));
+  background: -moz-linear-gradient(top, #0d343a 0%, #ffffff80 100%);
+  width: 1px;
+  height: 89px;
+  position: absolute;
+  bottom: 200px;
+  -webkit-animation: .63s linear infinite fall;
+  -moz-animation: .63s linear infinite fall;
+}
+
+@-webkit-keyframes fall {
+  to {
+    margin-top: 900px;
+  }
+}
+
+@-moz-keyframes fall {
+  to {
+    margin-top: 900px;
+  }
+}
+
+@keyframes fall {
+  to {
+    margin-top: 900px;
+  }
+}
+
+/*# sourceMappingURL=22eef_react-rain-animation_lib_style_b52d8e.css.map*/

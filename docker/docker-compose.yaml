@@ -1,0 +1,122 @@
+# profiles:
+#   [dev prod]
+
+services:
+  frontend:
+    build:
+      context: ../services/frontend
+      dockerfile: ../../docker/frontend.Dockerfile
+    container_name: ${FRONTEND_HOST_SERVICE}
+    expose: ["${FRONTEND_PORT}"]
+    env_file: ../.env
+    profiles: [prod]
+
+  database:
+    image: postgres:latest
+    container_name: ${DATABASE_HOST_SERVICE}
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    expose: ["${DATABASE_PORT}"]
+    volumes: ["database_data:/var/lib/postgresql/data"]
+    profiles: [dev, prod]
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ${ODBC_HOST_SERVICE}
+    expose: ["${ODBC_PORT}"]
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${ODBC_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${ODBC_DEFAULT_PASSWORD}
+      - PGADMIN_LISTEN_PORT=${ODBC_PORT}
+    depends_on: [database]
+    volumes: ["odbc_data:/var/lib/pgadmin"]
+    profiles: [dev, prod]
+
+  maildev:
+    build:
+      dockerfile: ./maildev.Dockerfile
+    ports: ["${MAILDEV_CLIENT_PORT}:${MAILDEV_CLIENT_PORT}"]
+    expose: ["${MAILDEV_SERVER_PORT}"]
+    profiles: [dev, prod]
+
+  backend:
+    build:
+      context: ../
+      dockerfile: ./docker/backend.Dockerfile
+    container_name: ${BACKEND_HOST_SERVICE}
+    depends_on: [database]
+    env_file: ../.env
+    expose: ["${BACKEND_PORT}"]
+    volumes:
+      [
+        "../services/backend:/project/services/backend",
+        "/project/services/backend/node_modules",
+        "../packages:/project/packages",
+      ]
+    profiles: [dev, prod]
+
+  cert-manager:
+    container_name: ${CERT_MANAGER_HOST_SERVICE}
+    image: jacoelho/generate-certificate
+    volumes: ["certs:/certificates"]
+    environment:
+      - SERVER=${PROJECT_DOMAIN}
+    profiles: [dev, prod]
+
+  gateway:
+    build:
+      context: ../gateway
+      dockerfile: ../docker/gateway.Dockerfile
+    container_name: ${GATEWAY_HOST_SERVICE}
+    depends_on: [database, pgadmin, cert-manager]
+    environment:
+      - PROJECT_NAME=${PROJECT_NAME}
+      - FRONTEND_DOMAIN=${FRONTEND_DOMAIN}
+      - FRONTEND_HOST_SERVICE=${FRONTEND_HOST_SERVICE}
+      - FRONTEND_PORT=${FRONTEND_PORT}
+      - BACKEND_DOMAIN=${BACKEND_DOMAIN}
+      - BACKEND_HOST_SERVICE=${BACKEND_HOST_SERVICE}
+      - BACKEND_PORT=${BACKEND_PORT}
+      - DATABASE_DOMAIN=${DATABASE_DOMAIN}
+      - DATABASE_HOST_SERVICE=${DATABASE_HOST_SERVICE}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - ODBC_DOMAIN=${ODBC_DOMAIN}
+      - ODBC_HOST_SERVICE=${ODBC_HOST_SERVICE}
+      - ODBC_PORT=${ODBC_PORT}
+    ports:
+      [
+        "${__PROTO_HTTP}:${__PROTO_HTTP}",
+        "${__PROTO_HTTPS}:${__PROTO_HTTPS}",
+        "${DATABASE_PORT}:${DATABASE_PORT}",
+      ]
+    volumes: ["gateway_config:/etc/nginx", "certs:/etc/nginx/certs"]
+    profiles: [dev, prod]
+
+volumes:
+  node_modules:
+  certs:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ../gateway/config/certs
+  odbc_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ../database/odbc
+  database_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ../database/data
+  gateway_config:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ../gateway/config

@@ -1,0 +1,12 @@
+/* [project]/services/frontend/src/app/test.module.css [app-ssr] (css) */
+.test-module__ykoVsW__testClass {
+  --test: "test";
+  height: 100%;
+  transition-property: perspective, translate, scale, transform, perspective, rotate;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/*# sourceMappingURL=src_app_test_module_31ffea.css.map*/

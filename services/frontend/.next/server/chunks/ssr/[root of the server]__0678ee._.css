@@ -1,0 +1,91 @@
+/* [next]/internal/font/google/archivo_black_b67df39.module.css [app-ssr] (css) */
+@font-face {
+  font-family: __Archivo_Black_b67df3;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/_next/static/media/HTxqL289NzCGg4MzN6KJ7eW6CYKF_jzx13HOvQ-s.9cd041c5.woff2") format("woff2");
+  unicode-range: U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: __Archivo_Black_b67df3;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/_next/static/media/HTxqL289NzCGg4MzN6KJ7eW6CYyF_jzx13E-s.cfe51ec5.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: __Archivo_Black_Fallback_b67df3;
+  src: local(Arial);
+  ascent-override: 70.78%;
+  descent-override: 16.93%;
+  line-gap-override: 0.0%;
+  size-adjust: 124.05%;
+}
+
+.archivo_black_b67df39-module__xIxRuW__className {
+  font-family: __Archivo_Black_b67df3, __Archivo_Black_Fallback_b67df3;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.archivo_black_b67df39-module__xIxRuW__variable {
+  --font-sans: "__Archivo_Black_b67df3", "__Archivo_Black_Fallback_b67df3";
+}
+
+
+/* [next]/internal/font/google/bebas_neue_e8a16c88.module.css [app-ssr] (css) */
+@font-face {
+  font-family: __Bebas_Neue_e8a16c;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/_next/static/media/JTUSjIg69CK48gW7PXoo9WdhyyTh89ZNpQ-s.60a6cc25.woff2") format("woff2");
+  unicode-range: U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: __Bebas_Neue_e8a16c;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/_next/static/media/JTUSjIg69CK48gW7PXoo9WlhyyTh89Y-s.01b21fad.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: __Bebas_Neue_Fallback_e8a16c;
+  src: local(Arial);
+  ascent-override: 117.32%;
+  descent-override: 39.11%;
+  line-gap-override: 0.0%;
+  size-adjust: 76.72%;
+}
+
+.bebas_neue_e8a16c88-module__yR0Q9a__className {
+  font-family: __Bebas_Neue_e8a16c, __Bebas_Neue_Fallback_e8a16c;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bebas_neue_e8a16c88-module__yR0Q9a__variable {
+  --font-sans: "__Bebas_Neue_e8a16c", "__Bebas_Neue_Fallback_e8a16c";
+}
+
+
+/* [project]/services/frontend/src/app/test.module.css [app-ssr] (css) */
+.test-module__ykoVsW__testClass {
+  --test: "test";
+  height: 100%;
+  transition-property: perspective, translate, scale, transform, perspective, rotate;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+
+/*# sourceMappingURL=%5Broot%20of%20the%20server%5D__0678ee._.css.map*/
