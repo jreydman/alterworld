@@ -67,4 +67,5 @@ We have conducted tests on worker threads. Here are the results:
 - Worker fib endpoint per 50 requests: 16.3s
 
 <img width="1590" alt="image" src="https://github.com/jreydman/alterworld/assets/58705342/6ed878c0-a4dc-468a-af61-3160c98692ef">
+![concept-2](https://github.com/jreydman/alterworld/assets/58705342/ad695b0c-a4ab-4bd5-aa5f-c386921811c3)
 
